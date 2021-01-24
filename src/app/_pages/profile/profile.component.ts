@@ -23,4 +23,8 @@ export class ProfileComponent implements OnInit {
       this.profilePicture = `../../../../assets/images/avatars/${this.user.imageId}.png`;
     }
   }
+
+  ok() {
+    console.log("ok");
+  }
 }
