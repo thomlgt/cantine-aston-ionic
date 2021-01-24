@@ -1,3 +1,6 @@
+import { TokenService } from './../../_services/token.service';
+import { UserService } from './../../_services/user.service';
+import { User } from './../../_models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user: User;
 
-  ngOnInit() {}
+  constructor(
+    private userService: UserService, 
+    private tokenService: TokenService,
+  ) { 
+    this.tokenService.tokenChange.subscribe(_ => this.ngOnInit());
+  }
+
+  ngOnInit(): void {
+    this.user = this.userService.getCurrentUser();
+  }
+
+  // /** TEMP no connexion */
+
+  // constructor() {}
+
+  // ngOnInit(): void {
+  // }
 
 }
