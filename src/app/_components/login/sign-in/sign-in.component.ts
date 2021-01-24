@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/_services/token.service';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,14 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+  password: string;
+
+
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private TokenService: TokenService) { }
 
   ngOnInit() {
-    console.log("ça charge");
   }
 
   submitForm(form) {
-    console.log("form submitted" + form);
+    this.userService
+      .login(form.value)
+      .subscribe(res => {
+        this.TokenService.handleResponse(res);
+        this.router.navigate(['/home']);
+      });
   }
 
 }
