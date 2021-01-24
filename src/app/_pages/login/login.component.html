@@ -1,1 +1,22 @@
-<ion-router-outlet></ion-router-outlet>
+<ion-content>
+
+    <ion-tabs>
+      <ion-tab-bar slot="top">
+
+        <ion-item 
+                  routerLink="/login/sign-in">
+                <p class="textMenu deco">Connexion</p>
+                </ion-item>
+
+      <ion-item 
+                routerLink="/login/sign-up">
+        <p class="textMenu deco">Inscription</p>
+      </ion-item>
+
+      </ion-tab-bar>
+    </ion-tabs>
+
+
+  <ion-router-outlet></ion-router-outlet>
+
+</ion-content>

@@ -1,3 +1,48 @@
-<p>
-  sign-up works!
-</p>
+<ion-card>
+  <form #form="ngForm"
+        (ngSubmit)="submitForm(form)">
+    <ion-item-group>
+      <ion-item>
+        <ion-label position="floating">Prénom</ion-label>
+        <ion-input type="text"
+                   name="firstname"
+                   ngModel
+                   autofocus="true">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nom</ion-label>
+        <ion-input type="text"
+                   name="name"
+                   ngModel></ion-input>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item>
+      <ion-label>Genre</ion-label>
+      <ion-select name="gender" ngModel>
+        <ion-select-option value="0">Homme</ion-select-option>
+        <ion-select-option value="1">Femme</ion-select-option>
+        <ion-select-option value="2">Autre</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email"
+                   name="email"
+                   ngModel>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password"
+                   name="password"
+                   ngModel></ion-input>
+      </ion-item>
+    </ion-item-group>
+    <ion-button expand="block"
+                type="submit">Inscription</ion-button>
+  </form>
+</ion-card>

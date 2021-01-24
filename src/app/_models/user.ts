@@ -25,14 +25,14 @@ export class User implements Resource<number> {
         let user = new User();
         user.address = "non renseigne";
         user.wallet = 0;
-        user.postalCode = "non renseigne";
+        user.postalCode = "";
         user.registrationDate = new Date();
         user.email = form.email;
         user.password = form.password
         user.isLunchLady = false;
         user.name = form.name;
         user.firstname = form.firstname;
-        user.phone = "non renseigne";
+        user.phone = "";
         user.town = "non renseigne";
         user.sex = form.gender;
         user.status = 0;
