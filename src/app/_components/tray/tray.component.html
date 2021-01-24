@@ -17,7 +17,7 @@
         <p class="itemText">{{ item.label }}</p>
         <p class="itemText">{{ item.priceDF | currency}} </p>
       </ion-label>
-      <ion-icon name="close-circle" color="danger" (click)="close(item)"></ion-icon>
+      <ion-icon name="close-circle" color="danger" (click)="remove(item)"></ion-icon>
     </ion-item>
   </ion-list>
 
