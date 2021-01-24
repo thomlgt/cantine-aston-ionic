@@ -1,1 +1,17 @@
-<p>WORK</p>
+<p class="title">Mes commandes :</p>
+
+<ion-list *ngFor="let order of orders">
+    <ion-item detail="false">
+        <ion-avatar slot="start">
+          <img src="./assets/img/{{ order.ingredients ? 'meal' : 'menu' }}/{{ order.imageId}}.png" />
+        </ion-avatar>
+        <ion-label>
+          <p class="itemText">{{ order.label }}</p>
+          <p class="itemText">{{ order.priceDF | currency}} </p>
+        </ion-label>
+      </ion-item>
+</ion-list>
+
+<ion-item *ngIf="orders == null">
+    <ion-label>Pas de commandes</ion-label>
+</ion-item>
