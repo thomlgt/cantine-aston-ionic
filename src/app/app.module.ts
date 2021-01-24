@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -21,6 +22,11 @@ import { HomeComponent } from './_pages/home/home.component';
 import { TrayComponent } from './_components/tray/tray.component';
 import { LoginComponent } from './_pages/login/login.component';
 import { ProfileComponent } from './_pages/profile/profile.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem("ACCESS_TOKEN");
+};
 
 @NgModule({
   declarations: [
@@ -40,7 +46,19 @@ import { ProfileComponent } from './_pages/profile/profile.component';
     ProfileComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [],
+        disallowedRoutes: [],
+      },
+    })
+  ],
   providers: [
     StatusBar,
     SplashScreen,

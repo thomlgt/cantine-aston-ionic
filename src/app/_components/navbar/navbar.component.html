@@ -1,3 +1,39 @@
-<p>
-  navbar works!
-</p>
+<ion-toolbar>
+  <ion-img class="logo" src="../assets/images/logo.svg"></ion-img>
+  <ion-buttons slot="end">
+    <ion-menu-button autoHide="false"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-menu side="end" type="push" contentId="main">
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false"></ion-menu-toggle>
+      <!-- CONNEXION -->
+      <ion-item color="success" routerLink="/login" *ngIf="!user" detail="false">
+        <p class="textMenu deco">Connexion</p>
+      </ion-item>
+      <!-- PROFILE -->
+      <ion-item routerLink="profile" detail="false" *ngIf="user">
+        <ion-avatar class="profilePic">
+          <ion-img  [src]="picPath"></ion-img>
+        </ion-avatar>
+        <p class="profileName">{{ user.name }} {{ user.firstname }}</p>
+      </ion-item>
+      <!-- ACCUEIL -->
+      <ion-item routerLink="home" detail="false">
+        <p class="textMenu">Accueil</p>
+      </ion-item>
+      <!-- PLATEAU -->
+      <ion-item (click)="openModal()">
+        <p class="textMenu">Plateau</p>
+      </ion-item>
+      <!-- DECONNEXION -->
+      <ion-item color="danger" (click)="logout()" *ngIf="user">
+        <p class="textMenu deco">Déconnexion</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="main"></ion-router-outlet>

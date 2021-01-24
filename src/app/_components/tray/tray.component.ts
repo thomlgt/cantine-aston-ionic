@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tray',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modal: ModalController) { }
 
   ngOnInit() {}
 
+  dismissModal() {
+    this.modal.dismiss();
+  }
 }
