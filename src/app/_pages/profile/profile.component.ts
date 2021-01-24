@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { InfosFormComponent } from 'src/app/_components/profile/infos-form/infos-form.component';
 import { User } from 'src/app/_models/user';
 import { UserService } from 'src/app/_services/user.service';
 
@@ -15,7 +16,9 @@ export class ProfileComponent implements OnInit {
   profilePicture: string;
 
   constructor(
-    private service: UserService) { }
+    private service: UserService,
+    private modal: ModalController
+    ) { }
 
   ngOnInit(): void {
     this.user = this.service.getCurrentUser();
@@ -24,7 +27,11 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  ok() {
-    console.log("ok");
+  async openModal() {
+    const modal = await this.modal.create({
+      component: InfosFormComponent
+    });
+
+    await modal.present();
   }
 }

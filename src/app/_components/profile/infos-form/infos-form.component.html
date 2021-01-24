@@ -1,4 +1,46 @@
-<ion-item>
-  <ion-label>Awesome Label</ion-label>
-</ion-item>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button (click)="dismissModal()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>Editer profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user">
+  <ion-list>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Nom :</ion-label>
+      <ion-input [value]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Prénom :</ion-label>
+      <ion-input [value]="user.firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Adresse :</ion-label>
+      <ion-input [value]="user.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Ville :</ion-label>
+      <ion-input [value]="user.town"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Code Postal :</ion-label>
+      <ion-input [value]="user.postalCode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Téléphone :</ion-label>
+      <ion-input [value]="user.phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="labelText" position="floating">Mail :</ion-label>
+      <ion-input [value]="user.email"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="onSubmit()" color="success" expand="block" >
+    Sauvegarder
+  </ion-button>
+</ion-content>
 

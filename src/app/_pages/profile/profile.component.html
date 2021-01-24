@@ -1,7 +1,7 @@
 <ion-card class="paddingMenu">
   <ion-card-header class="headerProfile">
 
-    <ion-button (click)="ok()" fill="clear" color="dark" class="editBtn">
+    <ion-button (click)="openModal()" fill="clear" color="dark" class="editBtn">
       <ion-icon name="pencil" routerLink="/infos-form"></ion-icon>
     </ion-button>
 
@@ -15,6 +15,6 @@
   </ion-card-header>
 
   <ion-card-content>
-    <ion-router-outlet></ion-router-outlet>
+    <router-outlet></router-outlet>
   </ion-card-content>
 </ion-card>
