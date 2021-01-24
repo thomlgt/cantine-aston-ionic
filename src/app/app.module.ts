@@ -22,6 +22,8 @@ import { TrayComponent } from './_components/tray/tray.component';
 import { LoginComponent } from './_pages/login/login.component';
 import { ProfileComponent } from './_pages/profile/profile.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,7 @@ import { ProfileComponent } from './_pages/profile/profile.component';
     ProfileComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,

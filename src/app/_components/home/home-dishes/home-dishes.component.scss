@@ -1,0 +1,58 @@
+ion-slides {
+    margin-bottom: 80px;
+}
+
+.dish-card {
+    position: relative;
+    height: 40vh;
+    width: 70vw;
+    background-size: cover;
+}
+
+.backgroundImage {
+    width: 70vw
+}
+
+.layer-up {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, #101a2e 100%);
+    opacity: 0.8;
+}
+
+.dish-text-infos {
+    z-index: 2;
+    color: #FFFFFF;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.add-btn {
+    color: #FFFFFF;
+    margin-top: 32vh;
+}
+
+.info-title {
+    position: absolute;
+    bottom: 45px;
+    left: 15px;
+}
+
+.info-price {
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+}
+
+span.swiper-pagination-bullet-active {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important; 
+    color: #FFFFFF !important; 
+}
+
+
+
+
+

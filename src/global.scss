@@ -24,3 +24,47 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* overrides Bootstrap color for these elements */
+.btn-primary,
+.badge-primary {
+  background-color: #4194e1;
+}
+
+
+/*** GENERIC ***/
+html {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+body {
+  min-height: 100vh;
+  margin    : 0;
+  padding   : 0;
+  background: linear-gradient(180deg, #EAEEF5 0%, #B2BCCC 100%);
+}
+
+
+/*** MAIN CONTAINER ***/
+.container {
+  max-width : 1200px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/*** ONGLETS DE NAVIGATION ***/
+.tabs a {
+  color          : #3E4756;
+  font-size      : 22px;
+  font-weight    : 700;
+  text-transform : uppercase;
+  text-decoration: none;
+}
+
+.tabs .active {
+  color: #4194E1;
+}

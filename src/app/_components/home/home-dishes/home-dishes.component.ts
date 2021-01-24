@@ -1,3 +1,6 @@
+import { OrderService } from './../../../_services/order.service';
+import { MealService } from './../../../_services/meal.service';
+import { Meal } from './../../../_models/meal';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeDishesComponent implements OnInit {
 
-  constructor() { }
+  meals: Meal[];
 
-  ngOnInit() {}
+  constructor(
+    private mealService: MealService, 
+    private orderService: OrderService) { }
+
+  ngOnInit() {
+    this.mealService.getAllByActualWeek().subscribe(
+      (meals: Meal[]) => {
+        let correctWeekMeals = meals.filter(meal => meal.availableForWeeks);
+        this.meals = correctWeekMeals;
+        console.log(this.meals);
+      });
+  }
+
+  addToTray(meal) {
+    this.orderService.addToTray(meal);
+  }
+
+  backgroundImage(index) {
+    let imageId = this.meals[index].imageId;
+    return 'background-image: url(./assets/img/meal/' + imageId + '.png)'
+  }
 
 }
