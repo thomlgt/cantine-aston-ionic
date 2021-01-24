@@ -9,10 +9,12 @@ export class SignInComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("ça charge");
+  }
 
-  submitForm() {
-    console.log("form submitted");
+  submitForm(form) {
+    console.log("form submitted" + form);
   }
 
 }

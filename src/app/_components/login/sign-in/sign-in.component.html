@@ -1,4 +1,4 @@
-<form ngForm="#form" (ngSubmit)="submitForm(form)">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
   <ion-item>
     <ion-label position="floating">E-mail</ion-label>
     <ion-input type="text"
@@ -11,5 +11,5 @@
   </ion-item>
   <button ion-button
           type="submit"
-          block>Add Todo</button>
+          block>Connexion</button>
 </form>

@@ -23,6 +23,7 @@ import { TrayComponent } from './_components/tray/tray.component';
 import { LoginComponent } from './_pages/login/login.component';
 import { ProfileComponent } from './_pages/profile/profile.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FormsModule } from '@angular/forms';
 
 export function tokenGetter() {
   return localStorage.getItem("ACCESS_TOKEN");
@@ -51,6 +52,7 @@ export function tokenGetter() {
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
