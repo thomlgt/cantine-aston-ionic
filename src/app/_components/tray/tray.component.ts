@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { OrderService } from 'src/app/_services/order.service';
 
 @Component({
   selector: 'app-tray',
@@ -8,9 +9,33 @@ import { ModalController } from '@ionic/angular';
 })
 export class TrayComponent implements OnInit {
 
-  constructor(private modal: ModalController) { }
+  tray = [];
+  totalPrice: number;
 
-  ngOnInit() {}
+  constructor(
+    private orderService: OrderService,
+    private modal: ModalController) {}
+
+  ngOnDestroy(): void {
+    this.tray = [];
+  }
+
+  ngOnInit(): void {
+    this.orderService.trayChange.subscribe(obj => {
+      this.tray.push(obj);
+      this.calcPrice();
+    });
+  }
+
+  calcPrice() {
+    this.totalPrice = 0;
+    this.tray.forEach(i => this.totalPrice += parseFloat(i.priceDF));
+  }
+
+  remove(item) {
+    this.tray = this.tray.filter(i => i.id != item.id);
+    this.calcPrice();
+  }
 
   dismissModal() {
     this.modal.dismiss();
