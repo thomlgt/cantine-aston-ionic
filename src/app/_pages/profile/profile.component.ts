@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'src/app/_models/user';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,8 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  isSelected: string = "orders"; // Choix par défaut;
+  user: User;
+  profilePicture: string;
 
-  ngOnInit() {}
+  constructor(
+    private service: UserService) { }
 
+  ngOnInit(): void {
+    this.user = this.service.getCurrentUser();
+    if (this.user) {
+      this.profilePicture = `../../../../assets/images/avatars/${this.user.imageId}.png`;
+    }
+  }
 }

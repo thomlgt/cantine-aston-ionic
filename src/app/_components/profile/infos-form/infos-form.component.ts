@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { User } from 'src/app/_models/user';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-infos-form',
@@ -7,8 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfosFormComponent implements OnInit {
 
-  constructor() { }
+  user: User;
 
-  ngOnInit() {}
+  constructor(private userService: UserService) { }
+
+  ngOnInit(): void {
+    this.user = this.userService.getCurrentUser();
+  }
+
+  // ! FIXME: ne fonctionne pas, l'entité attendue = userDToIn = avec password
+  onSubmit(form: NgForm) {
+    this.userService.update(form.value).subscribe(res => console.log(res));
+  }
 
 }

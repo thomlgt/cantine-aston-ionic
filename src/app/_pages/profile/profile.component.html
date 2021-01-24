@@ -1,3 +1,20 @@
-<p>
-  profile works!
-</p>
+<ion-card class="paddingMenu">
+  <ion-card-header class="headerProfile">
+
+    <ion-button routerLink="/infos" fill="clear" color="dark" class="editBtn">
+      <ion-icon name="pencil" routerLink="/infos-form"></ion-icon>
+    </ion-button>
+
+    <ion-avatar class="profilePic">
+      <img src="../assets/images/avatars/1.png" />
+    </ion-avatar>
+
+    <ion-card-title class="profileName">DURANT CLEMENT</ion-card-title>
+    <ion-card-subtitle class="profileRole">Étudiant</ion-card-subtitle>
+
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-card-content>
+</ion-card>

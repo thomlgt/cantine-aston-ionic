@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from 'src/app/_models/order';
 
 @Component({
   selector: 'app-profile-orders',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-orders.component.scss'],
 })
 export class ProfileOrdersComponent implements OnInit {
+
+  orders : Order[];
 
   constructor() { }
 
