@@ -21,7 +21,6 @@ export class HomeBoardsComponent implements OnInit {
       (menus: Menu[]) => {
         let correctWeekMenus = menus.filter(menu => menu.availableForWeeks);
         this.menus = correctWeekMenus;
-        console.log(this.menus);
       });
   }
 

@@ -21,7 +21,6 @@ export class HomeDishesComponent implements OnInit {
       (meals: Meal[]) => {
         let correctWeekMeals = meals.filter(meal => meal.availableForWeeks);
         this.meals = correctWeekMeals;
-        console.log(this.meals);
       });
   }
 
