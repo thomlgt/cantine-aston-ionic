@@ -9,10 +9,13 @@
       'warning' : order.status == 2,
       'danger' : order.status == 3}">
         <ion-label>
-          <p class="itemText">commande effectuee le :</p>
-          <p>{{ order.creationDate }} à {{ order.creationTime }}</p>
+          <p class="itemText">commande effectuee le :  </p>
+          <p class="itemDate">{{ order.creationDate | date : 'fullDate' }}</p>
+          <p class="itemDate">{{ order.creationTime }}</p>
+          <ion-button color="success" expand="block" disabled>
+            <p class="price">{{ order.priceVAT }} €</p>
+          </ion-button>
         </ion-label>
-        <p class="itemText">{{ order.priceVAT }} € </p>
       </ion-item>
 </ion-list>
 
