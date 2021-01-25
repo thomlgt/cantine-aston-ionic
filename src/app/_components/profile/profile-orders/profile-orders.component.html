@@ -1,10 +1,20 @@
 <p class="title">Mes commandes :</p>
 
 <ion-list *ngFor="let order of orders">
-    <ion-item detail="false">
+    <ion-item detail="false"
+    class="commands"
+    [ngClass]="{
+      'primary' : order.status == 0,
+      'success' : order.status == 1,
+      'warning' : order.status == 2,
+      'danger' : order.status == 3}">
         <ion-label>
-          <p class="itemText">{{ order.label }}</p>
-          <p class="itemText">{{ order.priceVATn | currency}} </p>
+          <p class="itemText">commande effectuee le :  </p>
+          <p class="itemDate">{{ order.creationDate | date : 'fullDate' }}</p>
+          <p class="itemDate">{{ order.creationTime }}</p>
+          <ion-button color="success" expand="block" disabled>
+            <p class="price">{{ order.priceVAT }} €</p>
+          </ion-button>
         </ion-label>
       </ion-item>
 </ion-list>

@@ -15,7 +15,7 @@
       </ion-avatar>
       <ion-label>
         <p class="itemText">{{ item.label }}</p>
-        <p class="itemText">{{ item.priceDF | currency}} </p>
+        <p class="itemText">{{ item.priceDF }} €</p>
       </ion-label>
       <ion-icon name="close-circle" color="danger" (click)="remove(item)"></ion-icon>
     </ion-item>
@@ -23,7 +23,7 @@
 
   
   <ion-item *ngIf="tray.length != 0">
-    <ion-label class="itemText">Total : {{ totalPrice | currency }}</ion-label>
+    <ion-label class="itemText">Total : {{ totalPrice }} €</ion-label>
   </ion-item>
 
   <ion-button expand="block" color="success" *ngIf="tray.length != 0">
