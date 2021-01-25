@@ -23,7 +23,6 @@ export class ProfileOrdersComponent implements OnInit {
     this.orderService.listForUser(this.user.id).subscribe( data => {
       this.empty = data.length == 0;
       this.orders = data;
-      console.log(this.orders);
       this.orders.forEach(order => {
         this.orderService.getPrice(order.id).subscribe(response => {
           order.priceVAT = response.priceVAT;
