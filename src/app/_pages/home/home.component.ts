@@ -23,11 +23,4 @@ export class HomeComponent implements OnInit {
     this.user = this.userService.getCurrentUser();
   }
 
-  // /** TEMP no connexion */
-
-  // constructor() {}
-
-  // ngOnInit(): void {
-  // }
-
 }
