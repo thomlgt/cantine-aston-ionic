@@ -12,15 +12,17 @@ export class HomeComponent implements OnInit {
 
   user: User;
 
-  constructor(
-    private userService: UserService, 
-    private tokenService: TokenService,
-  ) { 
-    this.tokenService.tokenChange.subscribe(_ => this.ngOnInit());
-  }
+  // constructor(
+  //   private userService: UserService, 
+  //   private tokenService: TokenService,
+  // ) { 
+  //   this.tokenService.tokenChange.subscribe(_ => this.ngOnInit());
+  // }
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.user = this.userService.getCurrentUser();
+    // this.user = this.userService.getCurrentUser();
   }
 
 }
