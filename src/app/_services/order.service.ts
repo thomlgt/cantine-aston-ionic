@@ -31,8 +31,8 @@ export class OrderService extends ResourceService<number, Order>{
     return this.http.get<Order>(`${environment.apiBaseUrl}/order/computeprice/${id}/-1`);
   }
 
-  getAllByUserId(id: number) : Observable<Order[]> {
-    return this.http.get<Order[]>(`${environment.apiBaseUrl}/order/findallforusertoday/${id}/`);
+  listForUser(userId: number): Observable<Order[]> {
+    return this.http.get<Order[]>(`${environment.apiBaseUrl}/order/findallforuser/${userId}`);
   }
 
   // TRAY SPECIFIC

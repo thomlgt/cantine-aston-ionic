@@ -2,12 +2,9 @@
 
 <ion-list *ngFor="let order of orders">
     <ion-item detail="false">
-        <ion-avatar slot="start">
-          <img src="./assets/img/{{ order.ingredients ? 'meal' : 'menu' }}/{{ order.imageId}}.png" />
-        </ion-avatar>
         <ion-label>
           <p class="itemText">{{ order.label }}</p>
-          <p class="itemText">{{ order.priceDF | currency}} </p>
+          <p class="itemText">{{ order.priceVATn | currency}} </p>
         </ion-label>
       </ion-item>
 </ion-list>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/_models/order';
+import { User } from 'src/app/_models/user';
 import { OrderService } from 'src/app/_services/order.service';
 import { UserService } from 'src/app/_services/user.service';
 
@@ -10,17 +11,26 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class ProfileOrdersComponent implements OnInit {
 
-  orders : Order[];
+  orders: Order[];
+  user: User;
+  empty = true;
 
-  constructor(
-    private orderService: OrderService,
-    private userService: UserService
-    ) { }
+  constructor(private orderService: OrderService, private userService: UserService) { }
 
-  ngOnInit() {
-    this.orderService.getAllByUserId(this.userService.getCurrentUser().id).subscribe(data => {
+  ngOnInit(): void {
+    this.user = this.userService.getCurrentUser();
+
+    this.orderService.listForUser(this.user.id).subscribe( data => {
+      this.empty = data.length == 0;
       this.orders = data;
+      console.log(this.orders);
+      this.orders.forEach(order => {
+        this.orderService.getPrice(order.id).subscribe(response => {
+          order.priceVAT = response.priceVAT;
+        });
+      })
     })
-  }
+  };
+
 
 }
