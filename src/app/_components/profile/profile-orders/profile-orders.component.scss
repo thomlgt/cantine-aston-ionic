@@ -11,3 +11,28 @@
     text-transform: uppercase;
     color: #3E4756;
 }
+
+.commands {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sucess {
+    border: 4px solid rgb(92, 184, 92);
+    box-shadow: 9px 5px 60px -2px rgba(0, 128, 0,0.26);
+}
+
+.primary {
+    border: 4px solid rgb(2, 117, 216);
+    box-shadow: 9px 5px 60px -2px rgba(2, 117, 216,0.26);
+}
+
+.warning {
+    border: 4px solid rgb(184, 134, 11);
+    box-shadow: 9px 5px 60px -2px rgba(184, 134, 11,0.26);
+}
+
+.danger {
+    border: 4px solid rgb(217, 83, 79);
+    box-shadow: 9px 5px 60px -2px rgba(255, 0, 0,0.26);
+}
