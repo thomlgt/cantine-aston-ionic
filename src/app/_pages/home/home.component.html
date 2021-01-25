@@ -1,3 +1,24 @@
-<p>
-  home works!
-</p>
+<header class="text-center">
+  <p *ngIf="user">Bonjour <b>{{ user.firstname }} !</b><br>
+  Tu as <b>{{ user.wallet | currency }}</b> sur ton compte.</p>
+  
+  <p *ngIf="!user"><b><a routerLink="/login">Connectez vous</a></b><br>
+  pour accéder à l'ensemble des fonctionnalités</p>
+</header>
+
+<!-- TEMP -->
+
+<!-- <header class="text-center">
+  <p>Bonjour <b>Samuel!</b><br>
+  Tu as <b>32 €</b> sur ton compte.</p>
+  
+  <p><b><a routerLink="/login">Connectez vous</a></b><br>
+  pour accéder à l'ensemble des fonctionnalités</p>
+</header> -->
+
+<nav class="tabs d-flex justify-content-center">
+  <a routerLink="boards" routerLinkActive="active" class="mr-5">Menus</a>
+  <a routerLink="dishes" routerLinkActive="active">Plats</a>
+</nav>
+
+<router-outlet></router-outlet>

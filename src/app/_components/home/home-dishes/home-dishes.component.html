@@ -1,3 +1,15 @@
-<p>
-  home-dishes works!
-</p>
+<ion-slides pager="true" [options]="slideOpts">
+  <ion-slide *ngFor="let meal of meals; let i = index">
+    <ion-card class="dish-card" [style]="backgroundImage(i)">
+      <div class="layer-up">
+        <div class="dish-text-infos info-title">
+          {{ meal.label}}
+        </div>        
+        <ion-button shape="round" class="add-btn" fill="clear" (click)="addToTray(meal)">
+          <ion-icon name="bag-add"></ion-icon>
+          <span>- {{ meal.priceDF }} €</span>
+        </ion-button>
+      </div> 
+    </ion-card>
+  </ion-slide>
+</ion-slides>
