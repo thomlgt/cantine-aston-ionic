@@ -26,7 +26,6 @@ export class NavbarComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log("initialisation navbar");
     this.user = this.service.getCurrentUser();
     if (this.user) {
       this.picPath = `../../../../assets/images/avatars/${this.user.imageId}.png`;

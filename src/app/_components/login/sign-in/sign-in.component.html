@@ -1,24 +1,27 @@
 <ion-card>
   <form #form="ngForm"
         (ngSubmit)="submitForm(form)">
-        <ion-item-group>
-    <ion-item>
-      <ion-label position="floating">E-mail</ion-label>
+    <ion-item-group>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
 
-      <ion-input type="email"
-                 name="email"
-                 ngModel
-                 autofocus="true">
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Mot de passe</ion-label>
-      <ion-input type="password"
-                 name="password"
-                ngModel></ion-input>
-    </ion-item>
-</ion-item-group>
-    <ion-button expand="block"
+        <ion-input type="email"
+                   name="email"
+                   ngModel
+                   autofocus="true">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password"
+                   name="password"
+                   ngModel></ion-input>
+      </ion-item>
+      <hr>
+      <a routerLink="/login/reset-password">Mot de passe oublié ?</a>
+    </ion-item-group>
+    <ion-button class="mt-2"
+                expand="block"
                 type="submit">Connexion</ion-button>
   </form>
 </ion-card>
