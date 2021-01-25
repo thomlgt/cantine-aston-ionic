@@ -9,8 +9,8 @@
       <img src="../assets/images/avatars/1.png" />
     </ion-avatar>
 
-    <ion-card-title class="profileName">DURANT CLEMENT</ion-card-title>
-    <ion-card-subtitle class="profileRole">Étudiant</ion-card-subtitle>
+    <ion-card-title class="profileName">{{ user.name }} {{ user.firstname }}</ion-card-title>
+    <ion-card-subtitle class="profileRole">{{ user.isLunchLady ? "Étudiant" : "Cantinier"}}</ion-card-subtitle>
 
   </ion-card-header>
 
