@@ -1,8 +1,12 @@
 <ion-card class="paddingMenu">
   <ion-card-header class="headerProfile">
 
-    <ion-button (click)="openModal()" fill="clear" color="dark" class="editBtn">
-      <ion-icon name="pencil" routerLink="/infos-form"></ion-icon>
+    <ion-button (click)="openModal()"
+                fill="clear"
+                color="dark"
+                class="editBtn">
+      <ion-icon name="pencil"
+                routerLink="/infos-form"></ion-icon>
     </ion-button>
 
     <ion-avatar class="profilePic">
@@ -10,7 +14,7 @@
     </ion-avatar>
 
     <ion-card-title class="profileName">{{ user.name }} {{ user.firstname }}</ion-card-title>
-    <ion-card-subtitle class="profileRole">{{ user.isLunchLady ? "Étudiant" : "Cantinier"}}</ion-card-subtitle>
+    <ion-card-subtitle class="profileRole">{{ user.isLunchLady ? "Cantinier" : "Etudiant"}}</ion-card-subtitle>
 
   </ion-card-header>
 
